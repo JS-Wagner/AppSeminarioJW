@@ -1,0 +1,35 @@
+<thead>
+  <tr>
+    <th>Imagen</th>
+    <th>Nombre</th>
+    <th>Banda</th>
+    <th>Lanzamiento</th>
+    <th>Precio</th>
+    <th>Stock</th>
+  </tr>
+</thead>
+
+<tbody>
+  @for (vinil of vinils; track vinil) {
+  <tr>
+    <td><img class="vinilImage" [src]="vinil.photo" [alt]="vinil.name"/></td>
+    <td class="vinilName">{{ vinil.name }}</td>
+    <td>{{ vinil.group }}</td>
+    <td>{{ vinil.released }}</td>
+    <td>{{ vinil.price | currency}}</td>
+    @if (vinil.stock > 0 && vinil.quantity != vinil.stock){
+      <td>{{ vinil.stock }}</td>
+    } @else{
+      <td><span class="badge text-bg-warning">SIN STOCK</span></td>
+    }
+    @if(vinil.stock){
+      <app-input-integer [(quantity)]="vinil.quantity" [max]="vinil.stock"></app-input-integer>
+    }
+    <td><button class="btn btn-secondary" (click)="addToCart(vinil)">Agregar al carro</button></td>
+  </tr>
+  } @empty {
+    <tr>
+      <td colspan="4">No hay vinilos</td>
+    </tr>
+  }
+</tbody>
