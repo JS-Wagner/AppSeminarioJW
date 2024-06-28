@@ -1,14 +1,8 @@
-<thead>
-  <tr>
-    <th>Imagen</th>
-    <th>Nombre</th>
-    <th>Banda</th>
-    <th>Lanzamiento</th>
-    <th>Precio</th>
-    <th>Stock</th>
-  </tr>
-</thead>
+<div class="container">
+  <h2>Disponible ahora mismo:</h2>
+</div>
 
+<div class="containers">
 <tbody>
   @for (vinil of vinils; track vinil) {
   <tr>
@@ -18,7 +12,7 @@
     <td>{{ vinil.released }}</td>
     <td>{{ vinil.price | currency}}</td>
     @if (vinil.stock > 0 && vinil.quantity != vinil.stock){
-      <td>{{ vinil.stock }}</td>
+      <td>{{ vinil.stock - vinil.quantity}}</td>
     } @else{
       <td><span class="badge text-bg-warning">SIN STOCK</span></td>
     }
@@ -33,3 +27,4 @@
     </tr>
   }
 </tbody>
+</div>

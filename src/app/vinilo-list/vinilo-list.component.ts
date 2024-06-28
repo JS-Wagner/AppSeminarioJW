@@ -28,12 +28,19 @@ export class ViniloListComponent implements OnInit{
   //Subscribe a data traida desde mockAPI
   ngOnInit(): void {
     this.vinilService.getAll().subscribe(vinilsData => this.vinils = vinilsData);
+
+    // Suscribirse a las actualizaciones de stock
+    this.cartService.stockUpdates$.subscribe(update => {
+      let vinil = this.vinils.find(v => v.id === update.id);
+      if (vinil) {
+        vinil.stock = update.stock;
+      }
+    });
   };
 
   //Añade un vinilo al carrito
   addToCart(vinil: Vinil): void{
     this.cartService.addToCart(vinil);
-    vinil.stock -= vinil.quantity;
     vinil.quantity = 0;
   }
 

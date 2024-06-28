@@ -1,0 +1,16 @@
+<section class="about-carousel">
+  <div class="container-fluid">
+    <div class="row">
+      <ngb-carousel>
+        @for(img of images; track img; let i = $index){
+        <ng-template ngbSlide>
+          <img [src]="[img]" alt="Slide {{i}}" class="img-fluid rounded mx-auto d-block"/>
+          <div class="carousel-caption">
+            <!--<h3>{{ title[i] }}</h3> -->
+          </div>
+        </ng-template>
+      }
+      </ngb-carousel>
+    </div>
+  </div>
+</section>

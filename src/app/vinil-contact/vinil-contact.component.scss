@@ -1,0 +1,186 @@
+@media screen and (max-width: 768px) {
+    .contact-content {
+        margin-bottom: 50px;
+    }
+
+    .contact-content form {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contact-content input,
+    .contact-content textarea,
+    .contact-content button {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    background-color: #f4f4f4;
+}
+
+.contact-content {
+    text-align: center;
+    padding: 60px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo del contenido con transparencia */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1s ease;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+div h2 {
+    margin: 0px;
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.contact-content h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.contact-content form {
+    margin-top: 20px;
+}
+
+.contact-content input,
+.contact-content textarea,
+.contact-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Incluye el padding en el cálculo del ancho */
+    text-align: center;
+    /* Centra el texto */
+}
+
+.contact-content .services-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-content .services-section h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.contact-content .services-section .service-item {
+    display: inline-block;
+    width: 30%;
+    /* Ajusta el ancho de cada servicio según sea necesario */
+    margin: 10px;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1s ease;
+}
+
+.contact-content .services-section .service-item input[type="checkbox"] {
+    display: none;
+    /* Oculta el checkbox */
+}
+
+.contact-content .services-section .service-item label {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-content .services-section .service-item label:hover {
+    background-color: #f0f0f0;
+    /* Cambia el color de fondo al pasar el ratón */
+}
+
+.contact-content .services-section .service-item img {
+    width: 50px;
+    /* Tamaño de los iconos de servicio */
+    height: 50px;
+    /* Tamaño de los iconos de servicio */
+    display: block;
+    margin: 0 auto 10px;
+    /* Centra verticalmente el icono */
+}
+
+.contact-content .services-section .service-item span {
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-content button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-content button:hover {
+    background-color: #e55d00;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+::ng-deep .clicked {
+    color: red;
+    /* Cambia el color al hacer clic en el elemento */
+}
+
+
+.button-providers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    button {
+        background: transparent;
+        font-family: inherit;
+        border: 1px solid white;
+        width: 100%;
+        max-width: 250px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        min-height: 48px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all ease-in 0.25s;
+
+        &:hover {
+            background: var(--text);
+            color: var(--dark-text);
+        }
+    }
+}
